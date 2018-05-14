@@ -1,6 +1,6 @@
 const {mongoose} = require('./../db/mongoose');
 
-var DataEventSchema = new mongoose.Schema(
+var EventDataSchema = new mongoose.Schema(
     {
         apMac: String,
         apTags:  [String],
@@ -26,6 +26,6 @@ var DataEventSchema = new mongoose.Schema(
     }
 );
 
-var DataEvent = new mongoose.Model('data-event', DataEventSchema);
+var EventData = mongoose.model('MerakiEvents', EventDataSchema);
 
-module.exports = {DataEvent};
+module.exports = {EventData};

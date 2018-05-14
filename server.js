@@ -7,6 +7,6 @@ const port = process.env.port || 3000;
 
 merakiRoutes(app);
 
-app.listen(port).then(() => {
+app.listen(port, () => {
     console.log(`Server started at ${port}`);
 });

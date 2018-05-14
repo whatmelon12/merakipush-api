@@ -1,6 +1,6 @@
 module.exports = function(app){
     const controller = require('./../controller/merakiController');
-    app.Route('meraki')
+    app.route('/meraki')
         .get(controller.MerakiAuthentication)
         .post(controller.CreateEventData);
 };
