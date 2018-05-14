@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 const {EventData} = require('./../model/event-data');
 
 var MerakiAuthentication = (req, res) => {
@@ -5,7 +7,7 @@ var MerakiAuthentication = (req, res) => {
 }
 
 var CreateEventData = (req, res) => {
-    var body = req.body;
+    var body = _.pick( req.body, ['data']);
     var event = new EventData(body);
     event.save().then(() => {
         res.send(event);
