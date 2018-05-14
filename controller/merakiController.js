@@ -7,7 +7,8 @@ var MerakiAuthentication = (req, res) => {
 }
 
 var CreateEventData = (req, res) => {
-    var body = _.pick( req.body, ['data']);
+    var body = req.body;
+    console.log(body);
     var event = new EventData(body);
     event.save().then(() => {
         res.send(event);
